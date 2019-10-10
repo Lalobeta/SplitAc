@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -27,6 +28,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private Button btnRegistrar;
     private Button btnLogin;
     private ProgressDialog progressDialog;
+    private Switch keepLoged;
 
     //Declaramos un objeto FirebaseAuth
     private FirebaseAuth firebaseAuth;
@@ -44,6 +46,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         TextPassword = (EditText) findViewById(R.id.txt_contra);
         btnLogin = (Button) findViewById(R.id.botonLogin);
         btnRegistrar = (Button) findViewById(R.id.botonRegistrar);
+        keepLoged = (Switch) findViewById(R.id.switch1);
 
         progressDialog = new ProgressDialog(this);
 
@@ -52,32 +55,35 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         btnRegistrar.setOnClickListener(this);
         btnLogin.setOnClickListener(this);
     }
-        private void LoginUsuario(){
-            //obtenemos el email y la contaseña desde los edittext
-            final String email = TextEmail.getText().toString().trim();
-            String password = TextPassword.getText().toString().trim();
+    private void LoginUsuario(){
+        //obtenemos el email y la contaseña desde los edittext
+        final String email = TextEmail.getText().toString().trim();
+        String password = TextPassword.getText().toString().trim();
 
-            //varificamos que las cajas de texto no esten vacias
-            if(TextUtils.isEmpty(email)){ //(precio.equals(""))
-                Toast.makeText(this, "Se debe ingresar un Email", Toast.LENGTH_SHORT).show();
-                return;
-            }
+        //varificamos que las cajas de texto no esten vacias
+        if(TextUtils.isEmpty(email)){ //(precio.equals(""))
+            Toast.makeText(this, "Se debe ingresar un Email", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-            if(TextUtils.isEmpty(password)){ //(precio.equals(""))
-                Toast.makeText(this, "Se debe ingresar la contraseña", Toast.LENGTH_SHORT).show();
-                return;
-            }
+        if(TextUtils.isEmpty(password)){ //(precio.equals(""))
+            Toast.makeText(this, "Se debe ingresar la contraseña", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-            progressDialog.setMessage("Comparando datos en linea...");
-            progressDialog.show();
+        progressDialog.setMessage("Comparando datos en linea...");
+        progressDialog.show();
 
-            //consultar a  user
-            firebaseAuth.signInWithEmailAndPassword(email,password)
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+        //consultar a  user
+        firebaseAuth.signInWithEmailAndPassword(email,password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             //checking if success
                             if(task.isSuccessful()){
+                                if(keepLoged.isChecked()){
+                                    //DO SOMETHING
+                                }
                                 Toast.makeText(Login.this,"Bienvenido " + TextEmail.getText(),Toast.LENGTH_LONG).show();
                                 Intent on= new Intent(Login.this,Counter.class);
                                 on.putExtra(Counter.user,email);
@@ -93,9 +99,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                             }
                             progressDialog.dismiss();
                         }
-                    });
-
-
+                });
 
     }
 

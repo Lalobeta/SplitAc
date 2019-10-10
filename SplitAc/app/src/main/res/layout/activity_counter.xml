@@ -40,7 +40,7 @@
         android:layout_height="92dp"
         android:layout_marginTop="232dp"
         android:background="?android:attr/panelBackground"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/resetBtn2"
         app:layout_constraintHorizontal_bias="0.206"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -53,70 +53,76 @@
         android:background="?android:attr/panelBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.754"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/resetBtn"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/plusBtn"
         android:layout_width="110dp"
         android:layout_height="119dp"
-        android:layout_marginTop="348dp"
         android:background="@drawable/beer"
         android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.209"
+        app:layout_constraintBottom_toTopOf="@+id/Precio"
+        app:layout_constraintEnd_toStartOf="@+id/plusBtn2"
+        app:layout_constraintHorizontal_bias="0.212"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/counterTxt"
+        app:layout_constraintVertical_bias="0.337" />
+
+    <!--android:layout_marginStart="52dp"
+        android:layout_marginBottom="148dp" -->
 
     <Button
         android:id="@+id/plusBtn2"
         android:layout_width="104dp"
         android:layout_height="113dp"
-        android:layout_marginTop="348dp"
         android:background="@drawable/cocktail"
         android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/Precio2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.755"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toEndOf="@+id/plusBtn"
+        app:layout_constraintTop_toBottomOf="@+id/counterTxt2"
+        app:layout_constraintVertical_bias="0.255" />
 
     <EditText
         android:id="@+id/Precio"
         android:layout_width="115dp"
         android:layout_height="73dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginBottom="148dp"
+        android:layout_marginStart="64dp"
         android:ems="10"
+        android:textAlignment="center"
         android:hint="@string/precio"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plusBtn"
+        app:layout_constriantEnd_toStartOf="@+id/Precio2" />
 
     <EditText
         android:id="@+id/Precio2"
         android:layout_width="121dp"
         android:layout_height="72dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="148dp"
         android:ems="10"
+        android:textAlignment="center"
         android:hint="@string/precio"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Precio"
+        app:layout_constraintTop_toBottomOf="@+id/plusBtn2"
         app:layout_constraintEnd_toEndOf="parent" />
+    <!--android:layout_marginEnd="60dp"
+        android:layout_marginBottom="148dp" -->
 
     <EditText
         android:id="@+id/total"
         android:layout_width="278dp"
         android:layout_height="81dp"
         android:layout_marginTop="100dp"
+        android:inputType="none"
         android:ems="10"
+        android:textAlignment="center"
         android:hint="@string/total"
-        android:inputType="textPersonName"
-        android:textAlignment="textEnd"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.473"
