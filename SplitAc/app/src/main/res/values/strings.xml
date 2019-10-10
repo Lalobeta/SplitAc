@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SplitAc</string>
+    <string name="enter_email">Email</string>
+    <string name="enter_password">Contraseña</string>
+    <string name="registrar">Registrarse</string>
+    <string name="username">Nombre del Usuario</string>
+    <string name="title">Registrate</string>
+    <string name="login">Entrar</string>
+    <string name="precio">Inserte precio</string>
+    <string name="total">Total</string>
+</resources>

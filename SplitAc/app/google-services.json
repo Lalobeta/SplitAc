@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "67605567271",
+    "firebase_url": "https://splitac-ee083.firebaseio.com",
+    "project_id": "splitac-ee083",
+    "storage_bucket": "splitac-ee083.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:67605567271:android:917a1f203725921d9d3b02",
+        "android_client_info": {
+          "package_name": "com.example.splitac"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "67605567271-sbjvobr0qjfvh6c8fbb7iefouf9sp3rq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.splitac",
+            "certificate_hash": "bb98f1ce4abcb2d134b295b9fdd45b1e7416782a"
+          }
+        },
+        {
+          "client_id": "67605567271-n6kvnen6psp3v9aumpj8iavh3lo6b0lm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8qmBuNsLFlD0_7Swy1AjdqqiOTGHV058"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "67605567271-n6kvnen6psp3v9aumpj8iavh3lo6b0lm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
